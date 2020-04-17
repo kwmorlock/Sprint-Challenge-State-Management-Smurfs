@@ -34,7 +34,7 @@ export const addSmurfs = (addSmurf) => {
 
     })
     .catch(err => {
-        dispatch({type: POST_SMURFS_FAILURE, payload: err.res.statusText})
+        dispatch({type: POST_SMURFS_FAILURE, payload: err})
     })
     }
 }

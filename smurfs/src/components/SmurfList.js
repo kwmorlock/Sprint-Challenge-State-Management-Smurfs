@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {fetchSmurfs} from '../actions/action'
+import {fetchSmurfs, addSmurfs} from '../actions/action'
 import Smurf from './Smurf';
 import {useSelector, useDispatch} from 'react-redux';
 
@@ -11,8 +11,8 @@ const Smurflist = props => {
     const isFetching = useSelector(state => state.isFetching)
     const error = useSelector(state => state.error)
     useEffect(() => {
-dispatch(fetchSmurfs());
-    }, [fetchSmurfs]);
+dispatch(fetchSmurfs, addSmurfs());
+    }, [fetchSmurfs, addSmurfs]);
     return (
     <div>
         {isFetching && <p>Getting Smurfs...</p>}
